@@ -1,23 +1,24 @@
 {
-  "name": "customer-and-products-api",
+  "name": "users-and-products-api",
   "version": "0.0.1",
-  "description": "An api to work with customers and produtcs",
-  "main": "index.js",
+  "description": "An api to work with users and products",
+  "main": "dist/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "tsc && nodemon dist/app.ts"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DanielLCintra/customer-and-products-api.git"
+    "url": "git+https://github.com/DanielLCintra/user-and-products-api.git"
   },
   "author": "Daniel Cintra",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/DanielLCintra/customer-and-products-api/issues"
+    "url": "https://github.com/DanielLCintra/user-and-products-api/issues"
   },
-  "homepage": "https://github.com/DanielLCintra/customer-and-products-api#readme",
+  "homepage": "https://github.com/DanielLCintra/user-and-products-api#readme",
   "dependencies": {
     "body-parser": "^1.20.2",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "pg": "^8.11.0",
     "sequelize": "^6.31.1",

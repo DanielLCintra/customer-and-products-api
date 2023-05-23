@@ -1,6 +1,6 @@
-# Customers and products API
+# Users and products API
 
-Hello, welcome to the customers and products api project.
+Hello, welcome to the users and products api project.
 
 ## This project allows:
 
@@ -46,25 +46,18 @@ To get all products from a specific user:
 <!-- [Access](#) To be completed -->
 
 ## Database Documentation
-[Access](https://dbdocs.io/cintra.70/products-api?schema=public&view=relationships&table=customer_address)
+[Access](https://dbdocs.io/cintra.70/Users-and-products-api)
 
-
-## Project Installation
-
-```
-yarn
-```
-
-### Compile and hot reload for development
+## Project Installation (Without Docker)
 
 ```
-yarn dev
+npm i
 ```
 
-### Just run the api
+### Just run the api (Without Docker)
 
 ```
-yarn start
+npm run start
 ```
 
 ## Built with:
