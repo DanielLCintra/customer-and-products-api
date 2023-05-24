@@ -1,6 +1,7 @@
 import express from "express";
 import userRoutes from "./routes/user";
 import authRoutes from "./routes/auth";
+import productRoutes from "./routes/product";
 import connection from "./db/config";
 import { json, urlencoded } from "body-parser";
 import { isCelebrateError } from 'celebrate';
@@ -13,6 +14,7 @@ app.use(urlencoded({ extended: true }));
 
 app.use("/", authRoutes);
 app.use("/", userRoutes);
+app.use("/", productRoutes);
 
 app.use((err: Error,
     req: express.Request,
