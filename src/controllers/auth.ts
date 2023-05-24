@@ -33,6 +33,12 @@ export const signUp: RequestHandler = async (req, res, next) => {
     try {
         const { name, email, password } = req.body;
 
+        const userAlreadyExist = await User.findOne({ where: { email } });
+
+        if (userAlreadyExist) {
+            return res.status(409).json({ error: 'A user with this e-mail already exists' });
+        }
+
         const hashedPassword = await bcrypt.hash(password, 10);
 
         const newUser = await User.create({

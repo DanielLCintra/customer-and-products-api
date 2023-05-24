@@ -3,6 +3,7 @@ import userRoutes from "./routes/user";
 import authRoutes from "./routes/auth";
 import connection from "./db/config";
 import { json, urlencoded } from "body-parser";
+import { isCelebrateError } from 'celebrate';
 
 const app = express();
 
@@ -13,16 +14,19 @@ app.use(urlencoded({ extended: true }));
 app.use("/", authRoutes);
 app.use("/user", userRoutes);
 
-app.use(
-    (
-        err: Error,
-        req: express.Request,
-        res: express.Response,
-        next: express.NextFunction
-    ) => {
-        res.status(500).json({ message: err.message });
+app.use((err: Error,
+    req: express.Request,
+    res: express.Response,
+    next: express.NextFunction) => {
+    if (isCelebrateError(err)) {
+        const errors = err.details.get('body')?.details.map((detail) => detail.message);
+        return res.status(400).json({ error: 'Validation error', details: errors });
     }
-);
+
+    res.status(500).json({ message: err.message });
+
+    next(err);
+});
 
 connection
     .sync()
