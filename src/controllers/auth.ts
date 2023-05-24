@@ -3,6 +3,7 @@ import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 
 import { User } from "../models/user";
+import { UserAddress } from "../models/userAddress";
 
 export const signIn: RequestHandler = async (req, res, next) => {
     const { email, password } = req.body;
@@ -31,7 +32,7 @@ export const signIn: RequestHandler = async (req, res, next) => {
 
 export const signUp: RequestHandler = async (req, res, next) => {
     try {
-        const { name, email, password } = req.body;
+        const { name, email, password, address } = req.body;
 
         const userAlreadyExist = await User.findOne({ where: { email } });
 
@@ -47,7 +48,13 @@ export const signUp: RequestHandler = async (req, res, next) => {
             password: hashedPassword,
         });
 
-        res.status(201).json({ message: 'User created successfully', user: newUser });
+        let userAddress = {};
+
+        if (address) {
+            userAddress = await UserAddress.create({ ...address, user_id: newUser.id });
+        }
+
+        res.status(201).json({ message: 'User created successfully', user: { id: newUser.id, name: newUser.name, email: newUser.email, address: userAddress } });
     } catch (error) {
         res.status(500).json({ error: 'Internal server error' });
     }
