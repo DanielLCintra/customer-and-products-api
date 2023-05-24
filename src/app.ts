@@ -12,7 +12,7 @@ app.use(json());
 app.use(urlencoded({ extended: true }));
 
 app.use("/", authRoutes);
-app.use("/user", userRoutes);
+app.use("/", userRoutes);
 
 app.use((err: Error,
     req: express.Request,

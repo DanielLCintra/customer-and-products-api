@@ -1,4 +1,5 @@
-import { Table, Model, Column, DataType } from "sequelize-typescript";
+import { Table, Model, Column, DataType, HasOne } from "sequelize-typescript";
+import { UserAddress } from "./userAddress";
 @Table({
     timestamps: true,
     tableName: 'user'
@@ -28,4 +29,7 @@ export class User extends Model {
         allowNull: false,
     })
     password!: string;
+
+    @HasOne(() => UserAddress)
+    address: UserAddress;
 }

@@ -20,6 +20,10 @@ To get an specific user, by his id:
 
 - GET /User/:id
 
+To update data from an specific user, by his id:
+
+- PUT /User/:id
+
 To create a product:
 
 - POST /Product

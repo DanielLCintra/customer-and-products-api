@@ -1,5 +1,6 @@
 import { Table, Column, Model, DataType, ForeignKey, BelongsTo } from 'sequelize-typescript';
 import {User} from './user'; 
+
 @Table({
     tableName: 'user_address', // Replace with your desired table name
     timestamps: true,
