@@ -14,3 +14,5 @@ export const updateUserBodySchema = Joi.object().keys({
 });
 
 export const defaultUserPathSchema = { id: Joi.string().required() };
+
+export const userPathSchema = { userId: Joi.string().required() };

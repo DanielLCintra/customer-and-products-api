@@ -5,9 +5,10 @@ import {
     getUserById,
     updateUser,
     deleteUser,
+    getUserProducts,
 } from "../controllers/user";
 import { Segments, celebrate } from "celebrate";
-import { updateUserBodySchema, defaultUserPathSchema } from "../validators/user";
+import { updateUserBodySchema, defaultUserPathSchema, userPathSchema } from "../validators/user";
 import { jwtMiddleware } from "../services";
 
 const router = Router();
@@ -31,6 +32,12 @@ router.delete("/Users/:id",
     jwtMiddleware, 
     celebrate({ [Segments.PARAMS]: defaultUserPathSchema }), 
     deleteUser
+);
+
+router.get("/User/products/:userId",
+    jwtMiddleware,
+    celebrate({ [Segments.PARAMS]: userPathSchema }),
+    getUserProducts
 );
 
 export default router;
