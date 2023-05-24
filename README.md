@@ -47,7 +47,7 @@ To get all products from a specific user:
 <!-- [Access](#) To be completed -->
 
 ## API Documentation
-<!-- [Access](#) To be completed -->
+[Access](https://documenter.getpostman.com/view/1219793/2s93m612N3)
 
 ## Database Documentation
 [Access](https://dbdocs.io/cintra.70/Users-and-products-api)
