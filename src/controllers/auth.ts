@@ -4,6 +4,9 @@ import bcrypt from 'bcrypt';
 
 import { User } from "../models/user";
 import { UserAddress } from "../models/userAddress";
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 export const signIn: RequestHandler = async (req, res, next) => {
     const { email, password } = req.body;
@@ -21,7 +24,7 @@ export const signIn: RequestHandler = async (req, res, next) => {
             return res.status(401).json({ error: 'Invalid email or password' });
         }
 
-        const token = jwt.sign({ userId: user.id }, 'your-secret-key', { expiresIn: '1h' });
+        const token = jwt.sign({ userId: user.id }, process.env.JWT_KEY as string, { expiresIn: '1h' });
 
         return res.json({ token });
     } catch (error) {
