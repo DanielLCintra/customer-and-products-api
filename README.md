@@ -45,7 +45,7 @@ To get all products from a specific user:
 - GET /User/Products/{userId}
 
 ## Live Demonstration
-[Access](http://44.209.158.168:3000/welcome)
+[Access](http://44.209.158.168/welcome)
 
 Hosted by AWS Lightsail, machine and database
 
