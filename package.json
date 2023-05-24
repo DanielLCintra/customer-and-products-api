@@ -1,6 +1,6 @@
 {
   "name": "users-and-products-api",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "An api to work with users and products",
   "main": "dist/app.js",
   "scripts": {
