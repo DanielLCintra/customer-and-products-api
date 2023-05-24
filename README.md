@@ -44,7 +44,7 @@ To get all products from a specific user:
 
 - GET /User/Products/{userId}
 ## Live Demonstration
-<!-- [Access](#) To be completed -->
+[Access](http://44.209.158.168:3000/welcome)
 
 ## API Documentation
 [Access](https://documenter.getpostman.com/view/1219793/2s93m612N3)
