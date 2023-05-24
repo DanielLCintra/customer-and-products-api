@@ -14,6 +14,14 @@ const connection = new Sequelize({
     database: process.env.DB_DATABASE,
     logging: false,
     models: [User, UserAddress, Product],
+    ...(process.env.NODE_ENV === "production" && {
+        dialectOptions: {
+            ssl: {
+                require: true,
+                rejectUnauthorized: false,
+            },
+        },
+    }),
 });
 
 export default connection;
