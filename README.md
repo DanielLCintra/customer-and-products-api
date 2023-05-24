@@ -53,6 +53,11 @@ To get all products from a specific user:
 ![My image](https://danielcintra-s3-bucket.s3.amazonaws.com/Users+and+products+api.png)
 [Access](https://dbdocs.io/cintra.70/Users-and-products-api)
 
+### Just run the api (With Docker)
+```
+docker compose up
+```
+
 ### Project Installation (Without Docker)
 
 ```

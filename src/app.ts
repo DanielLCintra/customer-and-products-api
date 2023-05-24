@@ -12,6 +12,10 @@ app.use(json());
 
 app.use(urlencoded({ extended: true }));
 
+app.use("/", (req, res) => {
+    return res.send("Welcome to the Users and Products API!");
+});
+
 app.use("/", authRoutes);
 app.use("/", userRoutes);
 app.use("/", productRoutes);

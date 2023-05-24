@@ -4,30 +4,31 @@ services:
   postgres:
     image: postgres:latest
     environment:
-      - 'POSTGRES_USER=postgres'
-      - 'POSTGRES_DB=users-and-products'
-      - 'POSTGRES_PASSWORD=postgres'
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=users-and-products
+      - POSTGRES_PASSWORD=postgres
     volumes:
       - postgres_data:/var/lib/postgresql/data
     ports:
-      - 5432:5432
+      - '5432:5432'
 
-  # app:
-  #   build:
-  #     context: .
-  #     dockerfile: Dockerfile
-  #   depends_on:
-  #     - postgres
-  #   environment:
-  #     host: postgres,
-  #     username: postgres,
-  #     password: postgres,
-  #     database: users-and-products,
-  #   ports:
-  #     - 3000:3000
-  #   volumes:
-  #     - .:/app
-  #   command: npm start
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - postgres
+    environment:
+      - DB_HOST=postgres
+      - DB_USERNAME=postgres
+      - DB_PASSWORD=postgres
+      - DB_DATABASE=users-and-products
+      - JWT_KEY=users-and-products
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/app
+    command: npm start
 
 volumes:
   postgres_data:
