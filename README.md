@@ -36,15 +36,19 @@ To get an specific product, by his id:
 
 - GET /Product/:id
 
-To get an specific product, by his id:
+To update data from an specific product, by his id:
 
-- GET /Product/:id
+- PUT /Product/:id
 
 To get all products from a specific user:
 
 - GET /User/Products/{userId}
+
 ## Live Demonstration
 [Access](http://44.209.158.168:3000/welcome)
+
+Hosted by AWS Lightsail, machine and database
+
 
 ## API Documentation
 [Access](https://documenter.getpostman.com/view/1219793/2s93m612N3)
