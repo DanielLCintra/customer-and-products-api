@@ -1,9 +1,9 @@
 import { Sequelize } from "sequelize-typescript";
 import { User } from "../models/user";
 import { UserAddress } from "../models/userAddress";
+import dotenv from 'dotenv';
 
-
-require('dotenv').config();
+dotenv.config();
 
 const connection = new Sequelize({
     dialect: "postgres",
