@@ -48,7 +48,7 @@ To get all products from a specific user:
 ## Database Documentation
 [Access](https://dbdocs.io/cintra.70/Users-and-products-api)
 
-## Project Installation (Without Docker)
+### Project Installation (Without Docker)
 
 ```
 npm i

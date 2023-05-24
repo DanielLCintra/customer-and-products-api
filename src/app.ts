@@ -1,5 +1,6 @@
 import express from "express";
 import userRoutes from "./routes/user";
+import authRoutes from "./routes/auth";
 import connection from "./db/config";
 import { json, urlencoded } from "body-parser";
 
@@ -9,6 +10,7 @@ app.use(json());
 
 app.use(urlencoded({ extended: true }));
 
+app.use("/", authRoutes);
 app.use("/user", userRoutes);
 
 app.use(

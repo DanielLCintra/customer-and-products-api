@@ -4,7 +4,8 @@
   "description": "An api to work with users and products",
   "main": "dist/app.js",
   "scripts": {
-    "start": "tsc && nodemon dist/app.ts"
+    "start": "tsc && nodemon dist/app.ts",
+    "dev": "ts-node-dev --transpile-only src/app.ts"
   },
   "repository": {
     "type": "git",
@@ -17,16 +18,22 @@
   },
   "homepage": "https://github.com/DanielLCintra/user-and-products-api#readme",
   "dependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.2",
+    "bcrypt": "^5.1.0",
     "body-parser": "^1.20.2",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
     "pg": "^8.11.0",
     "sequelize": "^6.31.1",
-    "sequelize-typescript": "^2.1.5"
+    "sequelize-typescript": "^2.1.5",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.17",
     "@types/node": "^20.2.3",
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "ts-node-dev": "^2.0.0"
   }
 }
